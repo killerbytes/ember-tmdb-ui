@@ -20,6 +20,8 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+      HOST: "https://api.themoviedb.org",
+      API_KEY: "49cfdb743cedde0892fc3dbfb373fe4b"
     }
   };
 
@@ -29,6 +31,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    
   }
 
   if (environment === 'test') {

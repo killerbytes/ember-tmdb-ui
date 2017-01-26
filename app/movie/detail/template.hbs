@@ -1,0 +1,9 @@
+<h1>Movie Detail</h1>
+<h2>{{model.title}}</h2>
+<p>{{model.overview}}</p>
+{{log model.genres}}
+<ul>
+  {{#each model.genres as |item|}}
+  <li>{{link-to item.name "genre" item.id }}</li>
+  {{/each}}
+</ul>
