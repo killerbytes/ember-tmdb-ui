@@ -1,0 +1,35 @@
+$pager-text-color: #666;
+.tmdb-pager{
+  display: block;
+  font-size: .75rem;
+  ul{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    li{
+      display: inline-block;
+    }
+    a{
+      color: $pager-text-color;
+      background: #DDD;
+      padding: 5px 3px;
+      text-decoration: none;
+      text-align: center;
+      width: 27px;
+      display: block;
+    }
+    a.active{
+      background: $pager-text-color;
+      color: #FFF;
+    }
+  }
+  a.controls{
+    text-align: center;
+    background: #DDD;
+    padding: 5px 3px;
+    width: 27px;
+    display: inline-block;
+    color: $pager-text-color;
+    text-decoration: none;
+  }
+}

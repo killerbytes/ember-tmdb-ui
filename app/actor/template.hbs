@@ -1,0 +1,17 @@
+<h1>Actor</h1>
+<h2>{{actor.name}}</h2>
+<p>{{actor.biography}}</p>
+
+<h4>Popular</h4>
+<ul>
+  {{#each images.profiles as |item|}}
+    <li><img src="{{image-path item.file_path}}" alt=""></li>
+  {{/each}}
+</ul>
+
+<h4>Movies</h4>
+<ul>
+  {{#each movieCredits.cast as |item|}}
+    <li>{{link-to item.title "movie.detail" item.id}}</li>
+  {{/each}}
+</ul>

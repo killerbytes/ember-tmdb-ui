@@ -1,6 +1,7 @@
 <h1>Genre</h1>
 <ul>
-{{#each model as |item|}}
-  <li>{{item.title}}</li>
+
+{{#each model.results as |item|}}
+  <li>{{link-to item.title "movie.detail" item.id}}</li>
 {{/each}}
 </ul>

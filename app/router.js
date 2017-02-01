@@ -11,8 +11,9 @@ Router.map(function() {
     this.route('detail', {path: '/:id'});
   });
   // this.route('detail', {path: 'movie/:id'});
-  this.route('movies', {path: 'movies/:category'});
+  // this.route('movies', {path: 'movies/:category'});
   this.route('genre', {path: 'genre/:id/movies'});
+  this.route('actor', {path: 'actor/:id'});
 });
 
 export default Router;

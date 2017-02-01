@@ -1,9 +1,0 @@
-<h1>Movie</h1>
-<ul>
-  {{#each model as |item|}}
-  {{log item}}
-  <li>
-    {{link-to item.title "movie.detail" item.id}}
-  </li>
-  {{/each}}
-</ul>
