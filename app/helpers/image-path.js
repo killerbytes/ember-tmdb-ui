@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
-export function imagePath([src]/*, hash*/) {
-  let url = `https://image.tmdb.org/t/p/w185${src}`;
+export function imagePath([src, size=185]/*, hash*/) {
+  let url = `https://image.tmdb.org/t/p/w${size}/${src}`;
   return url;
 }
 

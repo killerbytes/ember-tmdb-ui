@@ -16,7 +16,4 @@ export default Ember.Service.extend({
   query(id, type){
     return $.get(`${this.url}/movie/${id}/${type}?${this.apiKey}`)
   },
-  genre(genreId){   // /genre/{genre_id}/movies
-    return $.get(`${this.url}/genre/${genreId}/movies?${this.apiKey}`)
-  }
 });

@@ -1,16 +1,15 @@
 <h1>Movie Detail</h1>
 <img src="{{image-path movie.poster_path}}" alt="">
 <h2>{{movie.title}}</h2>
+<ul class="menu simple">
+  {{#each movie.genres as |item|}}
+  <li><span class="label secondary">{{link-to item.name "genre" (query-params genre=item.id page=1) }}</span></li>
+  {{/each}}
+</ul>
 <p>{{movie.tagline}}</p>
 <h4>Overview</h4>
 <p>{{movie.overview}}</p>
 
-<h4>Genre</h4>
-<ul>
-  {{#each movie.genres as |item|}}
-  <li>{{link-to item.name "genre" item.id }}</li>
-  {{/each}}
-</ul>
 
 <h4>Cast</h4>
 <ul>

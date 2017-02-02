@@ -12,7 +12,7 @@ Router.map(function() {
   });
   // this.route('detail', {path: 'movie/:id'});
   // this.route('movies', {path: 'movies/:category'});
-  this.route('genre', {path: 'genre/:id/movies'});
+  this.route('genre', {path: 'genre/movies'});
   this.route('actor', {path: 'actor/:id'});
 });
 
