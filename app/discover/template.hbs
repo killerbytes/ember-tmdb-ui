@@ -1,0 +1,15 @@
+<div class="row columns">
+  <button type="button" name="button" {{action "submit"}} class="button">Discover</button>
+  {{select-dropdown items=model.genres model=search.genre}}
+  {{search.genre}}
+  <ul class="no-bullet flex-column">
+    {{#each movies.results   as |item|}}
+    <li>
+      {{#link-to "movie.detail" item.id}}
+        {{movie-card-compact item=item}}
+      {{/link-to}}
+    </li>
+    {{/each}}
+  </ul>
+
+</div>

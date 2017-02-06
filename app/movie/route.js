@@ -8,9 +8,5 @@ export default Ember.Route.extend({
         return res.genres;
       }),
     })
-  },
-  setupController(controller, model, transition){
-    this._super(...arguments);
-    controller.setProperties(transition.params[transition.targetName])
   }
 });

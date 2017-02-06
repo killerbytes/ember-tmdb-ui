@@ -1,8 +1,16 @@
+$navyblue: #18121E;
+$gunmetal: #233237;
+$rustyred: #984B43;
+$warmyellow: #EAC67A;
+
 @import "settings";
 @import "foundation-sites/foundation";
 @import "foundation-sites/util/util";
 
 // @include foundation-everything;
 @include foundation-everything(true);
+
+@import "components/search-bar";
 @import "components/tmdb-pager";
+@import "components/movie-card";
 @import "default";

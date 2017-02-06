@@ -4,10 +4,8 @@ import pagedArray from 'ember-cli-pagination/computed/paged-array';
 
 export default Ember.Controller.extend({
   genreService: Ember.inject.service(),
-  list: Ember.computed.alias('model.items'),
-  queryParams: ['genre', 'page'],
+  queryParams: ['page'],
   page: 1,
-  genre: null,
   params: Ember.computed('movies', function(){
     return {
       page: this.get('page'),

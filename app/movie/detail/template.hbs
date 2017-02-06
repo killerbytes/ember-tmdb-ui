@@ -1,9 +1,10 @@
 <h1>Movie Detail</h1>
 <img src="{{image-path movie.poster_path}}" alt="">
 <h2>{{movie.title}}</h2>
+{{movie.vote_average}}
 <ul class="menu simple">
   {{#each movie.genres as |item|}}
-  <li><span class="label secondary">{{link-to item.name "genre" (query-params genre=item.id page=1) }}</span></li>
+  <li><span class="label secondary">{{link-to item.name "genre" item.id }}</span></li>
   {{/each}}
 </ul>
 <p>{{movie.tagline}}</p>
@@ -13,21 +14,29 @@
 
 <h4>Cast</h4>
 <ul>
-  {{#each credits.cast as |item|}}
+  {{#each cast as |item|}}
   <li>{{link-to item.name "actor" item.id }}</li>
   {{/each}}
 </ul>
 
 <h4>Similar</h4>
-<ul>
-  {{#each similar.results as |item|}}
-  <li>{{link-to item.title "movie.detail" item.id }}</li>
+<ul class="no-bullet flex-column">
+  {{#each similar as |item|}}
+  <li>
+    {{#link-to "movie.detail" item.id }}
+      {{movie-card item=item}}
+    {{/link-to}}
+  </li>
   {{/each}}
 </ul>
 
 <h4>Recommendations</h4>
-<ul>
-  {{#each recommendations.results as |item|}}
-  <li>{{link-to item.title "movie.detail" item.id }}</li>
+<ul class="no-bullet flex-column">
+  {{#each recommendations as |item|}}
+  <li>
+    {{#link-to "movie.detail" item.id }}
+      {{movie-card item=item}}
+    {{/link-to}}
+  </li>
   {{/each}}
 </ul>

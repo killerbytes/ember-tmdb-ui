@@ -1,0 +1,27 @@
+.search-bar{
+  width: 100%;
+  position: relative;
+  margin-bottom: 1rem;
+  input{
+    margin-bottom: 0;
+  }
+  ul{
+    position: absolute;
+    width: 100%;
+    background-color: $gunmetal;
+  }
+  .search-bar-item{
+    display: flex;
+    &:hover{
+      background-color: $rustyred;
+    }
+    .poster{
+      width: 50px;
+      padding: .25rem;
+    }
+    .info{
+      @extend .padded;
+    }
+  }
+
+}

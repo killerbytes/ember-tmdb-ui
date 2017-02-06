@@ -6,6 +6,13 @@ export default Ember.Controller.extend({
   list: 'popular',
   movie: Ember.computed.alias('model.movie'),
   credits: Ember.computed.alias('model.credits'),
-  similar: Ember.computed.alias('model.similar'),
-  recommendations: Ember.computed.alias('model.recommendations')
+  cast: Ember.computed('credits', function(){
+    return this.get('credits.cast').slice(0, 5);
+  }),
+  similar: Ember.computed('model.similar', function(){
+    return this.get('model.similar.results').slice(0,5);
+  }),
+  recommendations: Ember.computed('model.recommendations', function(){
+    return this.get('model.recommendations.results').slice(0, 5);
+  })
 });

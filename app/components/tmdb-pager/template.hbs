@@ -1,6 +1,6 @@
 {{#if model}}
 
-  {{#link-to "movie" (query-params list=params.list page=previousPage) class="controls"}}
+  {{#link-to (query-params page=previousPage) class="controls"}}
     <i class="fa fa-chevron-left" aria-hidden="true"></i>
   {{/link-to}}
 
@@ -9,7 +9,7 @@
   <ul>
   {{#each firstTwo as |item|}}
     <li>
-      {{link-to item (query-params list=params.list page=item)}}
+      {{link-to item (query-params page=item)}}
     </li>
   {{/each}}
   </ul>
@@ -21,7 +21,7 @@
   <ul>
     {{#each list as |item|}}
     <li>
-      {{link-to item (query-params list=params.list page=item)}}
+      {{link-to item (query-params page=item)}}
     </li>
     {{/each}}
   </ul>
@@ -33,14 +33,15 @@
   <ul>
     {{#each lastTwo as |item|}}
     <li>
-      {{link-to item (query-params list=params.list page=item)}}
+      {{link-to item (query-params page=item)}}
     </li>
     {{/each}}
   </ul>
 {{/if}}
 
 
-  {{#link-to "movie" (query-params list=params.list page=nextPage) class="controls"}}
+  {{#link-to (query-params page=nextPage) class="controls"}}
     <i class="fa fa-chevron-right" aria-hidden="true"></i>
   {{/link-to}}
+
 {{/if}}

@@ -1,0 +1,19 @@
+{{input focus-out="blur" key-up="search" value=query}}
+<ul class="no-bullet">
+  {{#each search.results as |item|}}
+    <li>
+      {{#link-to "movie.detail" item.id}}
+      <div class="search-bar-item">
+        <div class="poster">
+          <img src="{{image-path item.poster_path 92}}" alt="">
+        </div>
+        <div class="info">
+          <strong>{{item.title}}</strong><br>
+          {{item.release_date}}
+        </div>
+      </div>
+      {{/link-to}}
+
+    </li>
+  {{/each}}
+</ul>

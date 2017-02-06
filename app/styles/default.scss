@@ -3,6 +3,23 @@
 }
 ul{
   a.active{
-    color: #EAC67A;
+    color: $warmyellow;
   }
+}
+
+
+ul.flex-column{
+  display: flex;
+  flex-wrap: wrap;
+  li{
+    flex-grow: 1;
+  }
+}
+
+.padding{
+  padding: 1rem;
+}
+.padded{
+  padding-left: 1rem;
+  padding-right: 1rem;
 }

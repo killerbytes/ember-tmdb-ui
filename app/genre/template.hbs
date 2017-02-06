@@ -2,14 +2,18 @@
   <div class="columns medium-3">
     <ul class="no-bullet">
       {{#each model.genres as |item|}}
-        <li>{{link-to item.name "genre" (query-params genre=item.id page=1) }}</li>
+        <li>{{link-to item.name "genre" item.id }}</li>
       {{/each}}
     </ul>
   </div>
   <div class="columns medium-9">
-    <ul class="no-bullet">
+    <ul class="no-bullet flex-column">
       {{#each movies.results as |item|}}
-        <li>{{link-to item.title "movie.detail" item.id}}</li>
+        <li>
+          {{#link-to "movie.detail" item.id}}
+            {{movie-card item=item}}
+          {{/link-to}}
+        </li>
       {{/each}}
     </ul>
     {{tmdb-pager model=movies params=params }}
