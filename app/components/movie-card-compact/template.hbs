@@ -1,7 +1,7 @@
 <div class="poster">
-  <img src="{{image-path item.poster_path 185}}" alt="">
+  {{image-src file=item.poster_path size=185}}
 </div>
 <div class="info padding">
   <h4>{{item.title}}</h4>
-  <div>{{item.vote_average}}</div>
+  <div>{{item.release_date}} {{item.vote_average}}</div>
 </div>

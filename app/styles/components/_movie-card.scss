@@ -15,6 +15,7 @@
 .movie-card-compact{
   display: block;
   position: relative;
+  max-height: 264px;
   .poster{
     img{
       width: 100%;

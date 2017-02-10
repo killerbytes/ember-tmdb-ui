@@ -16,7 +16,16 @@ module.exports = function(environment) {
         Date: false
       }
     },
-
+    firebase: {
+      apiKey: "AIzaSyD7Li0Zu9JiqaoOcflZom1BBonRFu4nEkE",
+      authDomain: "media-library.firebaseapp.com",
+      databaseURL: "https://media-library.firebaseio.com",
+      storageBucket: "firebase-media-library.appspot.com",
+      messagingSenderId: "605315783938"
+    },
+    torii: {
+      sessionServiceName: 'session'
+    },    
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created

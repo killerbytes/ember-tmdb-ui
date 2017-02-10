@@ -2,6 +2,7 @@ import Ember from 'ember';
 import DS from 'ember-data';
 
 export default Ember.Controller.extend({
+  userService: Ember.inject.service(),
   queryParams: ['list'],
   list: 'popular',
   movie: Ember.computed.alias('model.movie'),
@@ -14,5 +15,10 @@ export default Ember.Controller.extend({
   }),
   recommendations: Ember.computed('model.recommendations', function(){
     return this.get('model.recommendations.results').slice(0, 5);
-  })
+  }),
+  actions: {
+    addToFavorites(item){
+        this.get('userService').addToFavorites(item);
+    }
+  }
 });

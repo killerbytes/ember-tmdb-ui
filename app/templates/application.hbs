@@ -12,12 +12,33 @@
 
       </div>
       <div class="top-bar-right">
+
         <ul class="menu">
-          <li><a href="#">Profile</a></li>
+          <li>
+            {{#if session.isAuthenticated}}
+              Logged in as {{session.currentUser.displayName}}
+              <button {{action "signOut"}} class="button">Sign out</button>
+            {{else}}
+              <a data-open="exampleModal">Login</a>
+            {{/if}}
+          </li>
         </ul>
       </div>
   </div>
 
+{{#zf-reveal id="exampleModal" overlay=true}}
+
+  {{#if session.isAuthenticated}}
+    Logged in as {{session.currentUser.displayName}}
+    <button {{action "signOut"}} class="button">Sign out</button>
+  {{else}}
+    <button {{action "signIn" "google"}} class="button">Sign in with Facebook</button>
+  {{/if}}
+
+  <button class="close-button" data-close aria-label="Close reveal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+{{/zf-reveal}}
 
 
 <div class="container">

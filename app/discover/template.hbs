@@ -1,9 +1,11 @@
 <div class="row columns">
-  <button type="button" name="button" {{action "submit"}} class="button">Discover</button>
-  {{select-dropdown items=model.genres model=search.genre}}
-  {{search.genre}}
+  <form class="" action="index.html" method="post">
+    {{select-dropdown list=model.genres model=genre}}
+    {{select-dropdown list=yearsList model=year}}
+    <button type="button" name="button" {{action "submit"}} class="button">Discover</button>
+  </form>
   <ul class="no-bullet flex-column">
-    {{#each movies.results   as |item|}}
+    {{#each movies.results as |item|}}
     <li>
       {{#link-to "movie.detail" item.id}}
         {{movie-card-compact item=item}}
@@ -11,5 +13,8 @@
     </li>
     {{/each}}
   </ul>
+
+  {{tmdb-pager model=movies params=params }}
+
 
 </div>
